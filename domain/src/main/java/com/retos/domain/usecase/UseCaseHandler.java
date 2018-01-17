@@ -34,6 +34,18 @@ public class UseCaseHandler {
         });
     }
     
+    public <V extends UseCase.ResponseValue> void notifyResponse(final V response, 
+            final UseCase.UseCaseCallback<V> useCaseCallback) {
+        
+        this.useCaseScheduler.notifyResponse(response, useCaseCallback);
+    }
+    
+    public <V extends UseCase.ResponseValue> void notifyError(
+            final UseCase.UseCaseCallback<V> useCaseCallback) {
+        
+        this.useCaseScheduler.onError(useCaseCallback);
+    }
+    
     private static final class UiCallbackWrapper<V extends UseCase.ResponseValue> implements 
             UseCase.UseCaseCallback<V> {
 
@@ -50,13 +62,21 @@ public class UseCaseHandler {
         @Override
         public void onSuccess(V response) {
             
+            this.mUseCaseHandler.notifyResponse(response, mCallback);
         }
 
         @Override
         public void onError() {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
+
+            this.mUseCaseHandler.notifyError(mCallback);
+        }   
+    }
     
+    public static UseCaseHandler getInstance(UseCaseUiThreadPool mHandler) {
+        if (INSTANCE == null) {
+            INSTANCE = new UseCaseHandler(new UseCaseThreadPoolScheduler(mHandler));
+        }
+        return INSTANCE;
     }
     
 }
