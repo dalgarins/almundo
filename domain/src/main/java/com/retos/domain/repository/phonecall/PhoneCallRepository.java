@@ -6,13 +6,16 @@
 package com.retos.domain.repository.phonecall;
 
 import com.retos.domain.model.phonecall.PhoneCall;
+import java.util.stream.Stream;
 
 /**
  *
  * @author darwin.algarin
  */
 public interface PhoneCallRepository {
+      
+    Stream<PhoneCall> getNextPhoneCallRinning();
     
-    PhoneCall getNextPhoneCallRinning();
+    Stream<PhoneCall> getNextPhoneCallRinning(int maxNumPhoneCall);
     
 }

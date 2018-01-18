@@ -5,10 +5,14 @@
  */
 package com.retos.domain.dispatcher;
 
+import com.retos.domain.model.phonecall.PhoneCall;
+
 /**
  *
  * @author dalgarins
  */
 public interface Dispatcher {
+    
+    void dispatchCall(PhoneCall call);
     
 }
