@@ -6,12 +6,15 @@
 package com.retos.domain.repository.employee;
 
 import com.retos.domain.model.employee.Employee;
+import java.util.List;
 
 /**
  *
  * @author darwin.algarin
  */
 public interface EmployeeRepository {
+    
+    List<Employee> getEmployees();
     
     Employee getFreeEmployee();
     
