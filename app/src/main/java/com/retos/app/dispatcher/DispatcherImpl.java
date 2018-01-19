@@ -5,7 +5,9 @@
  */
 package com.retos.app.dispatcher;
 
+import com.retos.domain.async.collection.ObservableQueue;
 import com.retos.domain.dispatcher.Dispatcher;
+import com.retos.domain.model.employee.Employee;
 import com.retos.domain.model.phonecall.PhoneCall;
 
 /**
@@ -13,10 +15,22 @@ import com.retos.domain.model.phonecall.PhoneCall;
  * @author darwin.algarin
  */
 public class DispatcherImpl implements Dispatcher {
+    
+    
+    private ObservableQueue<PhoneCall> callsOnHold;
+    private ObservableQueue<Employee> employeesAvailable;
+    
+    public DispatcherImpl(ObservableQueue<PhoneCall> callsOnHold, 
+            ObservableQueue<Employee> employeesAvailable) {
+        
+        this.callsOnHold = callsOnHold;
+        this.employeesAvailable = employeesAvailable;
+    }
 
     @Override
     public void dispatchCall(PhoneCall call) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
+        callsOnHold.add(call);
     }
     
 }

@@ -11,7 +11,7 @@ import com.retos.domain.usecase.UseCase;
  *
  * @author darwin.algarin
  */
-public class AnswerCall extends UseCase<AnswerCall.RequestValues, AnswerCall.ResponseValue>{
+public class AnswerCall extends UseCase<AnswerCall.RequestValues, AnswerCall.ResponseValue> {
 
     public AnswerCall() {
         
@@ -23,11 +23,11 @@ public class AnswerCall extends UseCase<AnswerCall.RequestValues, AnswerCall.Res
         
     }
      
-    public static class RequestValues implements UseCase.RequestValues {
+    public final static class RequestValues implements UseCase.RequestValues {
         
     }
     
-    public static class ResponseValues implements UseCase.ResponseValue {
+    public final static class ResponseValues implements UseCase.ResponseValue {
         
     }
 
