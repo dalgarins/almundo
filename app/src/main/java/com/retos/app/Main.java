@@ -7,7 +7,7 @@ package com.retos.app;
 
 import com.retos.app.injection.Injection;
 import com.retos.domain.dispatcher.Dispatcher;
-import com.retos.domain.repository.phonecall.PhoneCallRepository;
+import com.retos.domain.repository.Repository;
 
 /**
  *
@@ -17,11 +17,11 @@ public class Main {
 
     public static void main(String[] args) {
 
-        PhoneCallRepository phoneCallRepository = Injection.providePhoneCallRepository();
+        Repository repository = Injection.provideRepository();
 
         Dispatcher dispatcher = Injection.provideDispatcher();
         
-        phoneCallRepository.getNextPhoneCallRinning(10)
+        repository.getNextPhoneCallRinning(10)
                 .parallel()
                 .forEach(dispatcher::dispatchCall);
     }

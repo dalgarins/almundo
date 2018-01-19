@@ -5,12 +5,13 @@
  */
 package com.retos.domain.repository;
 
+import com.retos.domain.repository.employee.EmployeeRepository;
+import com.retos.domain.repository.phonecall.PhoneCallRepository;
+
 /**
  *
  * @author darwin.algarin
  */
-public interface Repository {
-    
-    
-    
+public interface Repository extends EmployeeRepository, PhoneCallRepository {
+        
 }

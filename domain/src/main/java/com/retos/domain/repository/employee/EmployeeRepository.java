@@ -16,6 +16,4 @@ public interface EmployeeRepository {
     
     List<Employee> getEmployees();
     
-    Employee getFreeEmployee();
-    
 }

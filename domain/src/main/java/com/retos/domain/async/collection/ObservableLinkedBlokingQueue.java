@@ -6,7 +6,6 @@
 package com.retos.domain.async.collection;
 
 import com.retos.domain.async.ObservableHelper;
-import com.retos.domain.async.Subscriber;
 import java.util.Observer;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -14,13 +13,13 @@ import java.util.concurrent.LinkedBlockingQueue;
  *
  * @author dalgarins
  */
-public class ObservableLinkedBlokingQueue <E> extends LinkedBlockingQueue<E> implements Subscriber<E>, ObservableQueue<E> {
+public class ObservableLinkedBlokingQueue <E> extends LinkedBlockingQueue<E> implements ObservableQueue<E> {
 
     private ObservableHelper observable = new ObservableHelper();
 
     @Override
-    public boolean add(E e) {
-        if (super.add(e)) {
+    public synchronized boolean offer(E e) {
+        if (super.offer(e)) {
             notifyObservers();
             return true;
         }

@@ -5,16 +5,14 @@
  */
 package com.retos.domain.async.collection;
 
-import java.util.Observer;
+import com.retos.domain.async.Subscriber;
+import java.util.Queue;
 
 /**
  *
  * @author dalgarins
  */
-public interface ObservableQueue <E> {
+public interface ObservableQueue <E> extends Queue<E>, Subscriber<E> {
     
-    public boolean add(E e);
-    
-    public void addObserver(Observer o);
-    
+        
 }

@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.retos.domain.model.employee;
+package com.retos.data.repository.model.phone;
+
+import com.retos.domain.model.phonecall.PhoneCall;
 
 /**
  *
- * @author darwin.algarin
+ * @author dalgarins
  */
-public class Director {
+public class PhoneCallModel implements PhoneCall {
     
 }

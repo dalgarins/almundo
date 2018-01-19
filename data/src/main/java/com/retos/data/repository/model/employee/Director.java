@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.retos.domain.model.employee;
+package com.retos.data.repository.model.employee;
 
 /**
  *
  * @author darwin.algarin
  */
-public class Operator {
+public class Director {
     
 }

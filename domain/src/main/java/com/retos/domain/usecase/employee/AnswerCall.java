@@ -18,10 +18,9 @@ public class AnswerCall extends UseCase<AnswerCall.RequestValues, AnswerCall.Res
     }
 
     @Override
-    public void executeUseCase(RequestValues requestValues) {
+    protected void executeUseCase(RequestValues requestValues) {
 
-        
-    }
+    }    
      
     public final static class RequestValues implements UseCase.RequestValues {
         

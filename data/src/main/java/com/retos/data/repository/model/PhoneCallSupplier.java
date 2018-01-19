@@ -5,6 +5,7 @@
  */
 package com.retos.data.repository.model;
 
+import com.retos.data.repository.model.phone.PhoneCallModel;
 import com.retos.domain.model.phonecall.PhoneCall;
 import java.util.function.Supplier;
 
@@ -16,7 +17,7 @@ public class PhoneCallSupplier implements Supplier<PhoneCall>{
 
     @Override
     public PhoneCall get() {
-        return new PhoneCallImpl();
+        return new PhoneCallModel();
     }
     
 }
