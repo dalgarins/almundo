@@ -21,7 +21,7 @@ public class Main {
 
         Dispatcher dispatcher = Injection.provideDispatcher();
         
-        repository.getNextPhoneCallRinning(10)
+        repository.getNextPhoneCallRinning(15)
                 .parallel()
                 .forEach(dispatcher::dispatchCall);
     }

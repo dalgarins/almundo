@@ -11,10 +11,16 @@ package com.retos.domain.model.phonecall;
  */
 public interface PhoneCall {
     
-    enum PhoneCallStatus {
+    public enum PhoneCallStatus {
         
         RINNING, ANSWER, END 
         
     }
+    
+    String getId();
+    
+    PhoneCallStatus getCallStatus();
+    
+    Long getTimeOfCall();
     
 }

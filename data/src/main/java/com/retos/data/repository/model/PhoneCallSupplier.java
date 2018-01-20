@@ -7,6 +7,8 @@ package com.retos.data.repository.model;
 
 import com.retos.data.repository.model.phone.PhoneCallModel;
 import com.retos.domain.model.phonecall.PhoneCall;
+import java.util.UUID;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Supplier;
 
 /**
@@ -17,7 +19,11 @@ public class PhoneCallSupplier implements Supplier<PhoneCall>{
 
     @Override
     public PhoneCall get() {
-        return new PhoneCallModel();
+        return new PhoneCallModel.Builder()
+                .setIdCall(UUID.randomUUID().toString())
+                .setCallStatus(PhoneCall.PhoneCallStatus.RINNING)
+                .setTimeofCall(ThreadLocalRandom.current().nextLong(5, 11))
+                .build();
     }
     
 }

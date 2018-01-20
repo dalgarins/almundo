@@ -11,6 +11,8 @@ import com.retos.domain.dispatcher.Dispatcher;
 import com.retos.domain.model.employee.Employee;
 import com.retos.domain.model.phonecall.PhoneCall;
 import com.retos.domain.repository.Repository;
+import com.retos.domain.usecase.UseCaseHandler;
+import java.util.Observer;
 
 /**
  *
@@ -21,19 +23,22 @@ public class DispatcherImpl implements Dispatcher {
     
     private ObservableQueue<PhoneCall> callsOnHold;
     private ObservableQueue<Employee> employeesAvailable;
-    private Repository repository;
+    private Observer observerDispatcher;
     
     public DispatcherImpl(Repository repository,
             ObservableQueue<PhoneCall> callsOnHold, 
-            ObservableQueue<Employee> employeesAvailable) {
+            ObservableQueue<Employee> employeesAvailable, 
+            UseCaseHandler useCaseHandler) {
         
-        this.repository = repository;
-        
+        this.observerDispatcher = Injection.provideObserverDispatcher(callsOnHold, employeesAvailable, useCaseHandler);
+               
         this.callsOnHold = callsOnHold;   
-        this.callsOnHold.addObserver(Injection.provideObserverQueuePhone(callsOnHold));
+        this.callsOnHold.addObserver(observerDispatcher);
         
         this.employeesAvailable = employeesAvailable;
-        this.employeesAvailable.addObserver(Injection.provideObserverQueueEmployee(employeesAvailable));
+        
+        this.employeesAvailable.addObserver(observerDispatcher);
+        this.employeesAvailable.addAll(repository.getEmployees());
     }
 
     @Override

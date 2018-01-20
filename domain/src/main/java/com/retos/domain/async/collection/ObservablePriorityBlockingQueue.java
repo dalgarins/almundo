@@ -6,16 +6,21 @@
 package com.retos.domain.async.collection;
 
 import com.retos.domain.async.ObservableHelper;
+import java.util.Comparator;
 import java.util.Observer;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.PriorityBlockingQueue;
 
 /**
  *
  * @author dalgarins
  */
-public class ObservableLinkedBlokingQueue <E> extends LinkedBlockingQueue<E> implements ObservableQueue<E> {
-
+public class ObservablePriorityBlockingQueue <E> extends PriorityBlockingQueue<E> implements ObservableQueue<E> {
+    
     private ObservableHelper observable = new ObservableHelper();
+    
+    public ObservablePriorityBlockingQueue(Comparator<E> comparator) {
+        super(10, comparator);
+    }
 
     @Override
     public synchronized boolean offer(E e) {
@@ -23,7 +28,7 @@ public class ObservableLinkedBlokingQueue <E> extends LinkedBlockingQueue<E> imp
             notifyObservers();
             return true;
         }
-        return false; //To change body of generated methods, choose Tools | Templates.
+        return false;
     }    
     
     @Override
@@ -45,6 +50,5 @@ public class ObservableLinkedBlokingQueue <E> extends LinkedBlockingQueue<E> imp
     public void notifyObservers() {
         observable.setChanged();
         observable.notifyObservers();
-    }
-    
+    }    
 }
