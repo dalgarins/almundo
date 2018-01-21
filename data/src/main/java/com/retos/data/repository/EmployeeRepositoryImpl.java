@@ -43,9 +43,7 @@ public class EmployeeRepositoryImpl implements EmployeeRepository {
         response.add(factory.getEmployee(UUID.randomUUID().toString(), "Empleado 6", Support.SupportLevel.LEVEL_2));
         response.add(factory.getEmployee(UUID.randomUUID().toString(), "Empleado 7", Support.SupportLevel.LEVEL_2));
         response.add(factory.getEmployee(UUID.randomUUID().toString(), "Empleado 8", Support.SupportLevel.LEVEL_2));
-        
-        
-        
+               
         return response;
     }
     

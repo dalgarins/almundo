@@ -53,3 +53,5 @@ nbactions.xml
 
 
 # End of https://www.gitignore.io/api/macos,maven,netbeans
+/domain/nbproject/
+/app/nbproject/

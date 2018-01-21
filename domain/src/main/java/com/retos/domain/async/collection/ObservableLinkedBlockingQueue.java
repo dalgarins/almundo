@@ -16,7 +16,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 public class ObservableLinkedBlockingQueue <E> extends LinkedBlockingQueue<E> implements ObservableQueue<E> {
 
     private ObservableHelper observable = new ObservableHelper();
-
+    
     @Override
     public synchronized boolean offer(E e) {
         if (super.offer(e)) {
