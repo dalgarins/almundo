@@ -20,4 +20,4 @@ y de no haber tampoco supervisores libres debe ser atendida por un director.
 
 # Solucion
 
-![Diagrama](../imagen/diagrama.png)
+![Diagrama](../master/imagen/diagrama.png)
