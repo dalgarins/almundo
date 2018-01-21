@@ -41,7 +41,7 @@ public class DispatcherImplTest {
 
     private EmployeeRepository emptyEmployeeRepository;
 
-    private EmployeeRepository fullEmployeeRepository;
+    private EmployeeRepository fullEmployeeWithOneDirectorRepository;
 
     private PhoneCallRepository phoneCallRepository;
 
@@ -69,7 +69,7 @@ public class DispatcherImplTest {
             }
         };
 
-        fullEmployeeRepository = new EmployeeRepository() {
+        fullEmployeeWithOneDirectorRepository = new EmployeeRepository() {
             @Override
             public List<Employee> getEmployees() {
 
@@ -137,7 +137,7 @@ public class DispatcherImplTest {
         int numberOfCalls = 9;
 
         Repository repository = new RepositoryImpl(
-                fullEmployeeRepository,
+                fullEmployeeWithOneDirectorRepository,
                 phoneCallRepository);
         ObservableQueue<PhoneCall> callsOnHold = new ObservableLinkedBlockingQueue<>();
         ObservableQueue<Employee> employeesAvailable = new ObservablePriorityBlockingQueue<>(comparator);
@@ -161,7 +161,7 @@ public class DispatcherImplTest {
         int numberOfCalls = 10;
 
         Repository repository = new RepositoryImpl(
-                fullEmployeeRepository,
+                fullEmployeeWithOneDirectorRepository,
                 phoneCallRepository);
         ObservableQueue<PhoneCall> callsOnHold = new ObservableLinkedBlockingQueue<>();
         ObservableQueue<Employee> employeesAvailable = new ObservablePriorityBlockingQueue<>(comparator);
