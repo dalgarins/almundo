@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.retos.data.repository.model.phone;
+package com.retos.domain.model.phonecall;
 
 import com.retos.domain.model.phonecall.PhoneCall;
 

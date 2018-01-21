@@ -11,7 +11,8 @@ import java.util.Observer;
 import java.util.concurrent.PriorityBlockingQueue;
 
 /**
- *
+ * Concrete implementation of PriorityBlockingQueue that accepts observer,
+ * to execute an action when data has changed
  * @author dalgarins
  */
 public class ObservablePriorityBlockingQueue <E> extends PriorityBlockingQueue<E> implements ObservableQueue<E> {

@@ -5,14 +5,14 @@
  */
 package com.retos.data.repository.model;
 
-import com.retos.data.repository.model.phone.PhoneCallModel;
+import com.retos.domain.model.phonecall.PhoneCallModel;
 import com.retos.domain.model.phonecall.PhoneCall;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Supplier;
 
 /**
- *
+ * Generator of random calls
  * @author dalgarins
  */
 public class PhoneCallSupplier implements Supplier<PhoneCall>{

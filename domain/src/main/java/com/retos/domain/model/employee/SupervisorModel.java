@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.retos.data.repository.model.employee;
+package com.retos.domain.model.employee;
 
 import com.retos.domain.model.employee.Employee;
+import com.retos.domain.model.employee.Support;
 
 /**
  *
  * @author darwin.algarin
  */
-public class OperatorModel extends Employee {
-
+public class SupervisorModel extends Employee implements Support {
+    
     private SupportLevel supportLevel;
     
-    protected OperatorModel(String id, String name, SupportLevel supportLevel) {
+    protected SupervisorModel(String id, String name, SupportLevel supportLevel) {
         super(id, name);
         this.supportLevel = supportLevel;
     }
@@ -23,7 +24,7 @@ public class OperatorModel extends Employee {
     @Override
     public SupportLevel getLevelOfSupport() {
         return this.supportLevel;
-    }    
+    }
     
     public static class Builder {
         
@@ -46,8 +47,10 @@ public class OperatorModel extends Employee {
             return this;
         }
         
-        public OperatorModel build() {
-            return new OperatorModel(id, name, supportLevel);
-        }        
+        public SupervisorModel build() {
+            return new SupervisorModel(id, name, supportLevel);
+        }
+        
     }
+    
 }

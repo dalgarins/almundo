@@ -11,7 +11,7 @@ import com.retos.domain.repository.phonecall.PhoneCallRepository;
 import java.util.stream.Stream;
 
 /**
- *
+ * Concrete implementation to load calls
  * @author dalgarins
  */
 public class PhoneCallRepositoryImpl implements PhoneCallRepository {

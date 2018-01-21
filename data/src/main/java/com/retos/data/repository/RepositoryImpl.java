@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 /**
- *
+ * Concrete implementation to load calls and employees and abstract the data source
  * @author dalgarins
  */
 public class RepositoryImpl implements Repository {

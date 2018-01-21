@@ -7,6 +7,7 @@ package com.retos.domain.usecase.employee;
 
 import com.retos.domain.model.employee.Employee;
 import com.retos.domain.model.phonecall.PhoneCall;
+import com.retos.domain.model.phonecall.PhoneCallModel;
 import com.retos.domain.usecase.UseCase;
 
 /**
@@ -24,9 +25,15 @@ public class AnswerCall extends UseCase<AnswerCall.RequestValues, AnswerCall.Res
     @Override
     protected void executeUseCase(RequestValues requestValues) {
 
+        PhoneCall call = requestValues.getPhoneCall();
+        call = new PhoneCallModel.Builder()
+                .setIdCall(call.getId())
+                .setCallStatus(PhoneCall.PhoneCallStatus.ANSWER)
+                .setTimeofCall(call.getTimeOfCall())
+                .build();
         try {
-            Thread.sleep(requestValues.getPhoneCall().getTimeOfCall() * FROM_MILIS_TO_SECONDS);
-        } catch (Exception e) {
+            Thread.sleep(call.getTimeOfCall() * FROM_MILIS_TO_SECONDS);
+        } catch (InterruptedException e) {
             getUseCaseCallback().onError();
         }
         getUseCaseCallback().onSuccess(new ResponseValues(requestValues.getEmployee()));

@@ -14,7 +14,7 @@ import java.util.Observer;
 import java.util.Queue;
 
 /**
- *
+ * Concrete implementation to assign a call to an free employee
  * @author dalgarins
  */
 public class ObserverDispatcherImpl implements Observer {

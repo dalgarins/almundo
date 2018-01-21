@@ -5,9 +5,9 @@
  */
 package com.retos.data.factory;
 
-import com.retos.data.repository.model.employee.DirectorModel;
-import com.retos.data.repository.model.employee.OperatorModel;
-import com.retos.data.repository.model.employee.SupervisorModel;
+import com.retos.domain.model.employee.DirectorModel;
+import com.retos.domain.model.employee.OperatorModel;
+import com.retos.domain.model.employee.SupervisorModel;
 import com.retos.domain.model.employee.Employee;
 import com.retos.domain.model.employee.Support;
 import org.junit.After;

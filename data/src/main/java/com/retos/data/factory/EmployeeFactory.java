@@ -1,13 +1,13 @@
 package com.retos.data.factory;
 
-import com.retos.data.repository.model.employee.DirectorModel;
-import com.retos.data.repository.model.employee.OperatorModel;
-import com.retos.data.repository.model.employee.SupervisorModel;
+import com.retos.domain.model.employee.DirectorModel;
+import com.retos.domain.model.employee.OperatorModel;
+import com.retos.domain.model.employee.SupervisorModel;
 import com.retos.domain.model.employee.Employee;
 import com.retos.domain.model.employee.Support;
 
 /**
- *
+ * Factory to create different types of employees
  * @author dalgarins
  */
 public final class EmployeeFactory {

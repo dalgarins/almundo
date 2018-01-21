@@ -9,7 +9,7 @@ import com.retos.app.ui.executor.UiThreadImpl;
 import com.retos.data.factory.EmployeeFactory;
 import com.retos.data.repository.PhoneCallRepositoryImpl;
 import com.retos.data.repository.RepositoryImpl;
-import com.retos.data.repository.model.employee.DirectorModel;
+import com.retos.domain.model.employee.DirectorModel;
 import com.retos.domain.async.collection.ObservableLinkedBlockingQueue;
 import com.retos.domain.async.collection.ObservablePriorityBlockingQueue;
 import com.retos.domain.async.collection.ObservableQueue;

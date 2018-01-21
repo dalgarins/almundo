@@ -10,7 +10,8 @@ import java.util.Observer;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- *
+ * Concrete implementation of LinkedBlockingQueue that accepts observer,
+ * to execute an action when data has changed
  * @author dalgarins
  */
 public class ObservableLinkedBlockingQueue <E> extends LinkedBlockingQueue<E> implements ObservableQueue<E> {

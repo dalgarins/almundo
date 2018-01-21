@@ -15,7 +15,7 @@ import com.retos.domain.usecase.UseCaseHandler;
 import java.util.Observer;
 
 /**
- *
+ * Concrete implementation lo manage the phonecalls and the employees
  * @author darwin.algarin
  */
 public class DispatcherImpl implements Dispatcher {

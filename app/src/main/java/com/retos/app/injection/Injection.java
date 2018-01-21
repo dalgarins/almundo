@@ -29,7 +29,7 @@ import java.util.Observer;
 import java.util.Queue;
 
 /**
- *
+ * Enable injection of implementation
  * @author darwin.algarin
  */
 public final class Injection {

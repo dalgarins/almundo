@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- *
+ * Concrete implementation to load employees
  * @author dalgarins
  */
 public class EmployeeRepositoryImpl implements EmployeeRepository {
