@@ -25,7 +25,9 @@ public final class UiThreadImpl implements UseCaseUiThreadPool {
     
     private UiThreadImpl() {}
     
-    private final ExecutorService executor = Executors.newCachedThreadPool();
+    public static final int MAX_POOL_SIZE = 10;
+   
+    private final ExecutorService executor = Executors.newFixedThreadPool(MAX_POOL_SIZE);
 
     @Override
     public void execute(Runnable runnable) {

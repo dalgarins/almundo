@@ -19,3 +19,5 @@ y de no haber tampoco supervisores libres debe ser atendida por un director.
 > - Agregar los tests unitarios que se crean convenientes. Agregar documentación de código.
 
 # Solucion
+
+![Diagrama](../imagen/diagrama.png)
