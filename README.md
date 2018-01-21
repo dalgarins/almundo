@@ -21,3 +21,15 @@ y de no haber tampoco supervisores libres debe ser atendida por un director.
 # Solucion
 
 ![Diagrama](../master/imagen/diagrama.png)
+
+## **Extras/Plus**
+
+- Se implemento el patron observador con dispatcher, creando un dispatcher asyncrono, capaz de detectar 
+cuando hay nuevas llamadas para en cola para ser contestadas y saber cuando hay empleados disponibles 
+para asignarles las llamadas.
+
+- Cuando no existe ningun empleado libre las llamadas se agregan a una cola, hasta que algun empleado
+se libere y la pueda tomar.
+
+- Cuando entran mas de 10 llamadas concurrentes las llamadas se agregan a una cola de ejecucion esperando
+ser atendidas.
